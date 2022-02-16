@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import './index.css';
 
 import Draggable from "../components/draggable/Draggable";
@@ -60,6 +60,11 @@ const Home = () => {
             <Draggable image={'/images/layer11.png'} />
           </div>
      
+          <div className="info-wrapper">
+            <p className="info-text">
+                그림을 드래그해서 움직여보세요.
+            </p>
+          </div>
         </div>
       );
 }

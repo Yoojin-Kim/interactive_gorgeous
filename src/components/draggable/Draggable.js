@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useSpring, animated, to } from "@react-spring/web";
 import { useGesture } from "react-use-gesture";
 
@@ -8,6 +8,7 @@ const calcY = (x, lx) => (x - lx - window.innerWidth / 2) / 20
 
 
 const Draggable = ({image}) => {
+  // const [zIndex, setZIndex] = useState(50)
   const domTarget = useRef(null);
 
   const [{ x, y, scale, rotateX, rotateY, rotateZ }, api] = useSpring(() => ({
@@ -40,9 +41,11 @@ const Draggable = ({image}) => {
 
   return (
       <animated.div
+        // onClick={() => setZIndex(p => p+10)}
         ref={domTarget}
         className="draggable-wrapper"
         style={{
+          // zIndex: zIndex,
           backgroundImage: `url(${image})`,
           rotateX,
           rotateY,
